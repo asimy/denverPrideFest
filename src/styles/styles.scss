@@ -1,4 +1,11 @@
 @import 'reset';
+@import 'variables';
+
+body {
+  height:100vh;
+  width:100vw;
+  background-color: $light_gray;
+}
 
 h1,
 h2,
