@@ -1,5 +1,15 @@
 @import '../../styles/variables';
 
 .prideBar {
+  background-color: $gbar;
+  text-align: center;
+}
 
+.gbarText {
+  color: $white;
+  font-size: 1.5rem;
+  //font-variant: small-caps;
+  font-weight: 800;
+  letter-spacing: .1rem;
+  padding: 1.1rem;
 }

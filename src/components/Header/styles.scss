@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .header {
-  margin: 2rem 0;
+  margin: 1rem 0;
 
   @media only screen and (min-width: $small) {
    margin: 3rem 0;
@@ -13,8 +13,8 @@
 }
 
 .logo {
-  height: 58px;
-  width: 100px;
+  height: 64px;
+  width: 110px;
 
   @media only screen and (min-width: $small) {
     height: 87px;

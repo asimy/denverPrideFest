@@ -22,7 +22,7 @@ class PrideBar extends React.Component {
           className,
         ].join(' ')}
       >
-        <div>pridebar</div>
+        <div className={classNames.gbarText}>Volunteer @ Pridefest</div>
       </div>
     );
   }
