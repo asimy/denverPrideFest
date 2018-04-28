@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import Step from '../Step';
 import LabeledInput from '../LabeledInput';
+import LabeledCheckbox from '../LabeledCheckbox';
 import updateUser from '../../actions/UserActions';
 
 import classNames from './styles.scss';
@@ -81,6 +82,12 @@ class UserInfo extends React.Component {
           onChange={this.handleChange}
           value={email}
           required
+        />
+        <LabeledCheckbox
+          label="I will be at least 18 years old as of <strong>June 14, 2018</strong>"
+          name="isOfAge"
+          onChange={this.handleChange}
+          value={email}
         />
       </div>
     );

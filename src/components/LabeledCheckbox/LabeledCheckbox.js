@@ -3,43 +3,27 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classNames from './styles.scss';
 
-class LabeledInput extends React.Component {
+class LabeledCheckbox extends React.Component {
   static propTypes = {
-    autoComplete: PropTypes.oneOf([
-      'email',
-      'family-name',
-      'given-name',
-    ]),
     className: PropTypes.string,
     name: PropTypes.string,
-    inputType: PropTypes.oneOf([
-      'text',
-      'email',
-    ]),
     label: PropTypes.string,
     onChange: PropTypes.func.isRequired,
-    required: PropTypes.bool,
     value: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
-    autoComplete: 'off',
     className: '',
     label: '',
     name: '',
-    inputType: 'text',
-    required: false,
   };
 
   render() {
     const {
-      autoComplete,
       className,
       name,
-      inputType,
       label,
       onChange,
-      required,
       value,
     } = this.props;
 
@@ -50,21 +34,20 @@ class LabeledInput extends React.Component {
         ].join(' ')}
       >
         <label
-          className={classNames.label}
+          className={classNames.innerWrapper}
           htmlFor={name}
         >
           {/* eslint-disable-next-line react/no-danger */}
-          <span dangerouslySetInnerHTML={{ __html: label }} />
-          {required ? <span className={classNames.required}>*</span> : null}
+          <span className={classNames.label} dangerouslySetInnerHTML={{ __html: label }} />
           <input
-            autoComplete={autoComplete}
             className={classNames.input}
             id={name}
             name={name}
             onChange={onChange}
-            type={inputType}
+            type="checkbox"
             value={value}
           />
+          <span className={classNames.checkMark} />
         </label>
       </div>
     );
@@ -77,5 +60,5 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(LabeledInput);
+export default connect(mapStateToProps)(LabeledCheckbox);
 
