@@ -1,7 +1,7 @@
 @import '../../styles/main';
 
 .wrapper{
-  margin-top: 2rem;
+  padding-top: $componentPadding;
 }
 
 .label {
@@ -10,14 +10,17 @@
 
 .input {
   border: 1px solid $inputBorder;
+  border-radius: $borderRadius;
+  color: $text;
   display: block;
-  font-size: 1.2rem;
+  font-size: $inputText;
   margin-top: .5rem;
   outline: none;
-  padding: .5rem;
+  padding: .5rem .7rem;
+  width: 100%;
 }
 
 .required {
   color: $warning;
-  margin-left: .4rem;
+  margin-left: .3rem;
 }

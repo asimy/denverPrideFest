@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classNames from './styles.scss';
 
-
 class LabeledInput extends React.Component {
   static propTypes = {
     autoComplete: PropTypes.oneOf([

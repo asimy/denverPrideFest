@@ -26,12 +26,16 @@ $inputBorder: #5146F5;
 $warning: $red;
 
 // FONT SIZES
-$banner: 1.5rem;
+$bannerText: 1.5rem;
+$inputText: 1.2rem;
 
 // SCREEN SIZES
-
 $extra_small: 576px;
 $small: 576px;
 $medium: 768px;
 $large: 992px;
 $extra_large: 1200px;
+
+// SPACING and DIMENSIONS
+$componentPadding: 2rem;
+$borderRadius: .2rem;
