@@ -7,7 +7,7 @@ import ContentWrapper from '../ContentWraper';
 class PrimaryLayout extends React.Component {
   render() {
     return (
-      <div className={classNames.primaryLayout}>
+      <div className={classNames.wrapper}>
         <Header className={classNames.header} />
         <PrideBar className={classNames.prideBar} />
         <ContentWrapper className={classNames.contentWrapper} />

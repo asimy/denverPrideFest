@@ -1,10 +1,15 @@
 export default {
   eventSignup: {
+    steps: {
+      current: 1,
+      max: 5,
+    },
     user: {
       firstName: '',
       lastName: '',
+      email: '',
     },
-    Terms:
+    terms:
       `<h2>RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK, AND INDEMNITY AGREEMENT (“AGREEMENT”)</h2>
         <p>IN CONSIDERATION of being permitted to participate in Denver PrideFest (“Activity”) as a volunteer I, for
           myself, my personal representatives, assigns, heirs, and next of kin:</p>

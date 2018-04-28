@@ -1,5 +1,7 @@
 @import '../../styles/main';
 
 .wrapper {
-  height: 100%;
+  composes: banner;
+
+  color: $step;
 }

@@ -1,15 +1,13 @@
-@import '../../styles/variables';
+@import '../../styles/main';
 
-.prideBar {
+.wrapper {
   background-color: $gbar;
   text-align: center;
 }
 
-.gbarText {
+.prideBar {
+  composes: banner;
   color: $white;
-  font-size: 1.5rem;
-  //font-variant: small-caps;
-  font-weight: 800;
   letter-spacing: .1rem;
   padding: 1.1rem;
 }

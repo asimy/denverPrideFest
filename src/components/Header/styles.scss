@@ -1,6 +1,6 @@
-@import '../../styles/variables';
+@import '../../styles/main';
 
-.header {
+.wrapper {
   margin: 1rem 0;
 
   @media only screen and (min-width: $small) {

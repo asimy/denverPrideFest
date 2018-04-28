@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import BasicInfo from '../BasicInfo';
+import BasicInfo from '../UserInfo';
 import classNames from './styles.scss';
 
 class ContentWrapper extends React.Component {
@@ -20,7 +20,7 @@ class ContentWrapper extends React.Component {
 
     return (
       <main className={
-        [classNames.content,
+        [classNames.wrapper,
           className,
         ].join(' ')}
       >

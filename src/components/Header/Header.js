@@ -18,7 +18,7 @@ class Header extends React.Component {
 
     return (
       <div className={
-        [classNames.header,
+        [classNames.wrapper,
           className,
         ].join(' ')}
       >

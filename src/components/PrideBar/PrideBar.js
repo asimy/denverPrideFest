@@ -18,11 +18,11 @@ class PrideBar extends React.Component {
 
     return (
       <div className={
-        [classNames.prideBar,
+        [classNames.wrapper,
           className,
         ].join(' ')}
       >
-        <div className={classNames.gbarText}>Volunteer @ Pridefest</div>
+        <div className={classNames.prideBar}>Volunteer @ Pridefest</div>
       </div>
     );
   }

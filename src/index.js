@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader'; // eslint-disable-line import/no-extraneous-dependencies
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
-import './styles/styles.scss';
+import './styles/main.scss';
 
 require('./resources/favicon.ico');
 

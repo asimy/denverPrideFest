@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { Switch, Route } from 'react-router-dom';
+
 import classNames from './styles.scss';
 
 class Terms extends React.Component {
@@ -16,7 +17,7 @@ class Terms extends React.Component {
   render() {
     return (
       <div
-        className={classNames.termsLayout}
+        className={classNames.wrapper}
         dangerouslySetInnerHTML={{ __html: this.props.Terms }} // eslint-disable-line react/no-danger
       />
     );
@@ -25,7 +26,7 @@ class Terms extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    Terms: state.Terms,
+    terms: state.terms,
   };
 }
 

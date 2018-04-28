@@ -103,7 +103,7 @@ export default {
             options: {
               sourceMap: true,
               modules: true,
-              localIdentName: '[name]_[local]_[hash:base64:5]',
+              localIdentName: '[folder]_[local]_[hash:base64:5]',
             },
           },
           {

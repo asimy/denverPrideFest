@@ -9,7 +9,7 @@ import classNames from './styles.scss';
 class App extends React.Component {
   render() {
     return (
-      <div className={classNames.appContainer}>
+      <div className={classNames.wrapper}>
         <div className={classNames.content}>
           <Switch>
             <Route exact path="/" component={PrimaryLayout} />
