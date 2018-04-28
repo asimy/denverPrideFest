@@ -8,6 +8,7 @@ export default {
       firstName: '',
       lastName: '',
       email: '',
+      isOfAge: false,
     },
     terms:
       `<h2>RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK, AND INDEMNITY AGREEMENT (“AGREEMENT”)</h2>

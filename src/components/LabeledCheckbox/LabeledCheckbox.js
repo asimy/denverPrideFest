@@ -9,7 +9,7 @@ class LabeledCheckbox extends React.Component {
     name: PropTypes.string,
     label: PropTypes.string,
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
+    checked: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -24,7 +24,7 @@ class LabeledCheckbox extends React.Component {
       name,
       label,
       onChange,
-      value,
+      checked,
     } = this.props;
 
     return (
@@ -45,7 +45,7 @@ class LabeledCheckbox extends React.Component {
             name={name}
             onChange={onChange}
             type="checkbox"
-            value={value}
+            checked={checked}
           />
           <span className={classNames.checkMark} />
         </label>
@@ -61,4 +61,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(LabeledCheckbox);
-

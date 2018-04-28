@@ -19,6 +19,7 @@ class UserInfo extends React.Component {
       firstName: PropTypes.string,
       lastName: PropTypes.string,
       email: PropTypes.string,
+      isOfAge: PropTypes.bool,
     }).isRequired,
     // actions
     updateUser: PropTypes.func.isRequired,
@@ -34,8 +35,11 @@ class UserInfo extends React.Component {
   }
 
   handleChange(e) {
-    // console.log({ [e.target.name]: e.target.value });
-    this.props.updateUser({ [e.target.name]: e.target.value });
+    if (e.target.type === 'checkbox') {
+      this.props.updateUser({ [e.target.name]: e.target.checked });
+    } else {
+      this.props.updateUser({ [e.target.name]: e.target.value });
+    }
   }
 
 
@@ -46,6 +50,7 @@ class UserInfo extends React.Component {
         firstName,
         lastName,
         email,
+        isOfAge,
       },
     } = this.props;
 
@@ -87,7 +92,7 @@ class UserInfo extends React.Component {
           label="I will be at least 18 years old as of <strong>June 14, 2018</strong>"
           name="isOfAge"
           onChange={this.handleChange}
-          value={email}
+          checked={isOfAge}
         />
       </div>
     );
