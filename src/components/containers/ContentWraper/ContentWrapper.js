@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import BasicInfo from '../UserInfo';
+import BasicInfo from '../Pages/UserInfo/index';
 import classNames from './styles.scss';
 
 class ContentWrapper extends React.Component {

@@ -23,7 +23,7 @@ class Header extends React.Component {
         ].join(' ')}
       >
         <img
-          src="../../resources/pridfest_logo.png"
+          src="../../../resources/pridfest_logo.png"
           alt="Denver Pride Logo"
           className={classNames.logo}
         />

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import { Switch, Route } from 'react-router-dom';
 
-import Step from '../Step';
-import LabeledInput from '../LabeledInput';
-import LabeledCheckbox from '../LabeledCheckbox';
-import Button from '../Button';
+import Step from '../../../subComponents/Step/index';
+import LabeledInput from '../../../subComponents/LabeledInput/index';
+import LabeledCheckbox from '../../../subComponents/LabeledCheckbox/index';
+import Button from '../../../subComponents/Button/index';
 
-import updateUser from '../../actions/UserActions';
+import updateUser from '../../../../actions/UserActions';
 
 import classNames from './styles.scss';
 

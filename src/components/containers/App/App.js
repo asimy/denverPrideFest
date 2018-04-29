@@ -1,9 +1,9 @@
 /* eslint-disable import/no-named-as-default */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import PrimaryLayout from '../PrimaryLayout';
-import Terms from '../Terms';
-import NotFoundPage from '../NotFoundPage';
+import PrimaryLayout from '../PrimaryLayout/index';
+import Terms from '../Terms/index';
+import NotFoundPage from '../Pages/NotFoundPage/index';
 import classNames from './styles.scss';
 
 class App extends React.Component {
