@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import BasicInfo from '../Pages/UserInfo/index';
+import BasicInfo from '../Pages/UserInfo';
+import ContactInfo from '../Pages/ContactInfo';
 import classNames from './styles.scss';
 
 class ContentWrapper extends React.Component {
@@ -25,7 +26,8 @@ class ContentWrapper extends React.Component {
         ].join(' ')}
       >
         <Switch>
-          <Route exact path="/" component={BasicInfo} />
+          <Route path="/signup/userinfo" component={BasicInfo} />
+          <Route path="/signup/contactinfo" component={ContactInfo} />
         </Switch>
       </main>
     );

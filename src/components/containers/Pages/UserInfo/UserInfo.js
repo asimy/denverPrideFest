@@ -45,8 +45,10 @@ class UserInfo extends React.Component {
     }
   }
 
-  handleClick(e) {
-    console.log(e, 'clicked', this);
+  handleClick() {
+    console.log(this.props);
+    /* eslint-disable-next-line */
+    this.props.history.push('contactInfo');
   }
 
 

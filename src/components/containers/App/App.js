@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import PrimaryLayout from '../PrimaryLayout/index';
 import Terms from '../Terms/index';
 import NotFoundPage from '../Pages/NotFoundPage/index';
@@ -12,8 +12,9 @@ class App extends React.Component {
       <div className={classNames.wrapper}>
         <div className={classNames.content}>
           <Switch>
-            <Route exact path="/" component={PrimaryLayout} />
-            <Route exact path="/Terms" component={Terms} />
+            <Redirect exact from="/" to="/signup/userinfo" />
+            <Route path="/signup" component={PrimaryLayout} />
+            <Route path="/terms" component={Terms} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>

@@ -70,7 +70,7 @@ class ContactInfo extends React.Component {
         <Step />
         <LabeledInput
           autoComplete="given-name"
-          label="First Name"
+          label="NEXT"
           name="firstName"
           inputType="text"
           onChange={this.handleChange}
