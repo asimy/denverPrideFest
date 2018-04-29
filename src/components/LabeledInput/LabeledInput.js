@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import classNames from './styles.scss';
 
 class LabeledInput extends React.Component {
@@ -11,12 +10,13 @@ class LabeledInput extends React.Component {
       'given-name',
     ]),
     className: PropTypes.string,
-    name: PropTypes.string,
+    id: PropTypes.string,
     inputType: PropTypes.oneOf([
       'text',
       'email',
     ]),
     label: PropTypes.string,
+    name: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     required: PropTypes.bool,
     value: PropTypes.string.isRequired,
@@ -24,10 +24,11 @@ class LabeledInput extends React.Component {
 
   static defaultProps = {
     autoComplete: 'off',
-    className: '',
-    label: '',
-    name: '',
+    className: undefined,
+    id: undefined,
     inputType: 'text',
+    label: undefined,
+    name: undefined,
     required: false,
   };
 
@@ -35,9 +36,10 @@ class LabeledInput extends React.Component {
     const {
       autoComplete,
       className,
-      name,
+      id,
       inputType,
       label,
+      name,
       onChange,
       required,
       value,
@@ -59,7 +61,7 @@ class LabeledInput extends React.Component {
           <input
             autoComplete={autoComplete}
             className={classNames.input}
-            id={name}
+            id={id || name}
             name={name}
             onChange={onChange}
             type={inputType}
@@ -71,11 +73,5 @@ class LabeledInput extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    steps: state.steps,
-  };
-}
-
-export default connect(mapStateToProps)(LabeledInput);
+export default LabeledInput;
 

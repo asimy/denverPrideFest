@@ -44,15 +44,33 @@
   transform: rotate(45deg);
 }
 
-.innerWrapper:hover .input ~ .checkMark:after {
+.innerWrapper:hover .input ~ .checkMark:after
+//.innerWrapper:focus .input ~ .checkMark:after,
+//.input:focus ~ .checkMark:after
+{
   border: solid $inputBorder;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
 }
 
-.innerWrapper:hover .input ~ .checkMark {
+.innerWrapper:hover .input ~ .checkMark
+//.innerWrapper:focus .input ~ .checkMark,
+//.input:focus ~ .checkMark
+{
   background-color: $inputHighlight;
 }
+
+//.innerWrapper:active .input ~ .checkMark:after,
+//.input:active ~ .checkMark:after {
+//  border: solid $white;
+//  border-width: 0 3px 3px 0;
+//  transform: rotate(45deg);
+//}
+//
+//.innerWrapper:active .input ~ .checkMark,
+//.input:active ~ .checkMark {
+//  background-color: $inputBorder;
+//}
 
 .input:checked ~ .checkMark:after {
   border: solid $inputBorder;

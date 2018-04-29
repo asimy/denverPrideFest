@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import Step from '../Step';
 import LabeledInput from '../LabeledInput';
 import LabeledCheckbox from '../LabeledCheckbox';
+import Button from '../Button';
+
 import updateUser from '../../actions/UserActions';
 
 import classNames from './styles.scss';
@@ -32,6 +34,7 @@ class UserInfo extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(e) {
@@ -40,6 +43,10 @@ class UserInfo extends React.Component {
     } else {
       this.props.updateUser({ [e.target.name]: e.target.value });
     }
+  }
+
+  handleClick(e) {
+    console.log(e, 'clicked', this);
   }
 
 
@@ -94,6 +101,11 @@ class UserInfo extends React.Component {
           onChange={this.handleChange}
           checked={isOfAge}
         />
+        <Button
+          onClick={this.handleClick}
+        >
+          I want to help!
+        </Button>
       </div>
     );
   }

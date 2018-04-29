@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import classNames from './styles.scss';
 
-class LabeledCheckbox extends React.Component {
+class LabeledCheckbox extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
+    id: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string,
     onChange: PropTypes.func.isRequired,
@@ -13,14 +13,20 @@ class LabeledCheckbox extends React.Component {
   };
 
   static defaultProps = {
-    className: '',
-    label: '',
-    name: '',
+    className: undefined,
+    id: undefined,
+    label: undefined,
+    name: undefined,
   };
+  /* eslint-disable-next-line */
+  componentWillUpdate(next, prev) {
+    console.log(next, prev);
+  }
 
   render() {
     const {
       className,
+      id,
       name,
       label,
       onChange,
@@ -41,7 +47,7 @@ class LabeledCheckbox extends React.Component {
           <span className={classNames.label} dangerouslySetInnerHTML={{ __html: label }} />
           <input
             className={classNames.input}
-            id={name}
+            id={id || name}
             name={name}
             onChange={onChange}
             type="checkbox"
@@ -54,10 +60,4 @@ class LabeledCheckbox extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    steps: state.steps,
-  };
-}
-
-export default connect(mapStateToProps)(LabeledCheckbox);
+export default LabeledCheckbox;

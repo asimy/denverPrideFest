@@ -1,7 +1,6 @@
 @import '../../styles/main';
 
 .wrapper {
-  composes: banner;
-
+  composes: bold;
   color: $step;
 }
