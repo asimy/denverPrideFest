@@ -1,4 +1,4 @@
-import initialState from './initialState';
+import initialState from '../constants/initialState';
 
 export default function TermsReducer(state = initialState.eventSignup.terms, action) {
   // let newState;

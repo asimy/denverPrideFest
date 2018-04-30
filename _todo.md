@@ -4,4 +4,4 @@
 * standardize on 'undefined' for empty strings
 * does moving fields into a form ease access on mobile devices
 * see if the checkbox highlighting can be improved
-
+* i'd love to find a good way to do input masking

@@ -1,17 +1,22 @@
+// external libs
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { Switch, Route } from 'react-router-dom';
 
+// our components
 import Step from '../../../subComponents/Step/index';
 import LabeledInput from '../../../subComponents/LabeledInput/index';
 import LabeledCheckbox from '../../../subComponents/LabeledCheckbox/index';
 import Button from '../../../subComponents/Button/index';
 
+// actions
 import updateUser from '../../../../actions/UserActions';
 
-import classNames from './styles.scss';
+// strings
+import strings from '../../../../constants/strings';
 
+// styles
+import classNames from './styles.scss';
 
 class UserInfo extends React.Component {
   static propTypes = {
@@ -47,7 +52,7 @@ class UserInfo extends React.Component {
 
   handleClick() {
     console.log(this.props);
-    /* eslint-disable-next-line */
+    /* eslint-disable-next-line react/prop-types */
     this.props.history.push('contactInfo');
   }
 
@@ -72,7 +77,7 @@ class UserInfo extends React.Component {
         <Step />
         <LabeledInput
           autoComplete="given-name"
-          label="First Name"
+          label={strings.firstName}
           name="firstName"
           inputType="text"
           onChange={this.handleChange}
@@ -81,7 +86,7 @@ class UserInfo extends React.Component {
         />
         <LabeledInput
           autoComplete="family-name"
-          label="Last Name"
+          label={strings.lastName}
           name="lastName"
           inputType="text"
           onChange={this.handleChange}
@@ -90,7 +95,7 @@ class UserInfo extends React.Component {
         />
         <LabeledInput
           autoComplete="email"
-          label="Email"
+          label={strings.email}
           name="email"
           inputType="email"
           onChange={this.handleChange}
@@ -98,7 +103,7 @@ class UserInfo extends React.Component {
           required
         />
         <LabeledCheckbox
-          label="I will be at least 18 years old as of <strong>June 14, 2018</strong>"
+          label={`${strings.minAge} <strong>${strings.minAgeDate}</strong>`}
           name="isOfAge"
           onChange={this.handleChange}
           checked={isOfAge}
@@ -106,7 +111,7 @@ class UserInfo extends React.Component {
         <Button
           onClick={this.handleClick}
         >
-          I want to help!
+          {strings.userInfoDone}
         </Button>
       </div>
     );

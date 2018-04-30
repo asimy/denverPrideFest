@@ -8,17 +8,22 @@ class LabeledInput extends React.Component {
       'email',
       'family-name',
       'given-name',
+      'off',
+      'street-address',
+      'tel',
     ]),
     className: PropTypes.string,
     id: PropTypes.string,
     inputType: PropTypes.oneOf([
-      'text',
       'email',
+      'tel',
+      'text',
     ]),
     label: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     required: PropTypes.bool,
+    subtext: PropTypes.string,
     value: PropTypes.string.isRequired,
   };
 
@@ -30,6 +35,7 @@ class LabeledInput extends React.Component {
     label: undefined,
     name: undefined,
     required: false,
+    subtext: undefined,
   };
 
   render() {
@@ -42,6 +48,7 @@ class LabeledInput extends React.Component {
       name,
       onChange,
       required,
+      subtext,
       value,
     } = this.props;
 
@@ -68,6 +75,7 @@ class LabeledInput extends React.Component {
             value={value}
           />
         </label>
+        <div className={classNames.subtext}>{subtext}</div>
       </div>
     );
   }

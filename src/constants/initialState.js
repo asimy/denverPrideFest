@@ -2,13 +2,19 @@ export default {
   eventSignup: {
     steps: {
       current: 1,
-      max: 5,
+      max: 7,
     },
     user: {
       firstName: '',
       lastName: '',
       email: '',
       isOfAge: false,
+    },
+    contactInfo: {
+      phone: '',
+      address: '',
+      emergencyContact: '',
+      emergencyPhone: '',
     },
     terms:
       `<h2>RELEASE AND WAIVER OF LIABILITY, ASSUMPTION OF RISK, AND INDEMNITY AGREEMENT (“AGREEMENT”)</h2>

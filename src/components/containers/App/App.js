@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import PrimaryLayout from '../PrimaryLayout/index';
 import Terms from '../Terms/index';
-import NotFoundPage from '../Pages/NotFoundPage/index';
+import NotFoundPage from '../_Pages/NotFoundPage/index';
 import classNames from './styles.scss';
 
 class App extends React.Component {

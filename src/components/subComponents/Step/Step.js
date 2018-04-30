@@ -1,6 +1,12 @@
+// external libs
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
+// strings
+import strings from '../../../constants/strings';
+
+// styles
 import classNames from './styles.scss';
 
 
@@ -17,7 +23,7 @@ class Step extends React.Component {
     className: '',
     steps: {
       current: 1,
-      max: 5,
+      max: 7,
     },
   };
 
@@ -36,7 +42,7 @@ class Step extends React.Component {
           className,
         ].join(' ')}
       >
-        Step {current} of {max}
+        {`${strings.step} ${current} ${strings.of} ${max}`}
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import initialState from './initialState';
+import initialState from '../constants/initialState';
 import actions from '../constants/actions';
 
 export default function UserReducer(state = initialState.eventSignup.user, action) {

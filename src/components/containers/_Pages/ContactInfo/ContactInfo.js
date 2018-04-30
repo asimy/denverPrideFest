@@ -1,15 +1,20 @@
+// external libs
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { Switch, Route } from 'react-router-dom';
 
+// our components
 import Step from '../../../subComponents/Step/index';
 import LabeledInput from '../../../subComponents/LabeledInput/index';
-import LabeledCheckbox from '../../../subComponents/LabeledCheckbox/index';
 import Button from '../../../subComponents/Button/index';
 
-import updateUser from '../../../../actions/UserActions';
+// actions
+import updateContact from '../../../../actions/ContactActions';
 
+// strings
+import strings from '../../../../constants/strings';
+
+// styles
 import classNames from './styles.scss';
 
 
@@ -17,14 +22,14 @@ class ContactInfo extends React.Component {
   static propTypes = {
     // props
     className: PropTypes.string,
-    user: PropTypes.shape({
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
-      email: PropTypes.string,
-      isOfAge: PropTypes.bool,
+    contact: PropTypes.shape({
+      phone: PropTypes.string,
+      address: PropTypes.string,
+      emergencyContact: PropTypes.string,
+      emergencyPhone: PropTypes.string,
     }).isRequired,
     // actions
-    updateUser: PropTypes.func.isRequired,
+    updateContact: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -39,9 +44,9 @@ class ContactInfo extends React.Component {
 
   handleChange(e) {
     if (e.target.type === 'checkbox') {
-      this.props.updateUser({ [e.target.name]: e.target.checked });
+      this.props.updateContact({ [e.target.name]: e.target.checked });
     } else {
-      this.props.updateUser({ [e.target.name]: e.target.value });
+      this.props.updateContact({ [e.target.name]: e.target.value });
     }
   }
 
@@ -53,11 +58,11 @@ class ContactInfo extends React.Component {
   render() {
     const {
       className,
-      user: {
-        firstName,
-        lastName,
-        email,
-        isOfAge,
+      contact: {
+        phone,
+        address,
+        emergencyContact,
+        emergencyPhone,
       },
     } = this.props;
 
@@ -68,43 +73,49 @@ class ContactInfo extends React.Component {
         ].join(' ')}
       >
         <Step />
+        <div className={classNames.moreInfo}>
+          <strong>{strings.moreInfo}</strong>
+        </div>
         <LabeledInput
-          autoComplete="given-name"
-          label="NEXT"
-          name="firstName"
+          autoComplete="tel"
+          label={strings.phone}
+          name="phone"
+          inputType="tel"
+          onChange={this.handleChange}
+          subtext={strings.phoneSubtext}
+          value={phone}
+          required
+        />
+        <LabeledInput
+          autoComplete="street-address"
+          label={strings.mailingAddress}
+          name="address"
           inputType="text"
           onChange={this.handleChange}
-          value={firstName}
+          value={address}
           required
         />
         <LabeledInput
-          autoComplete="family-name"
-          label="Last Name"
-          name="lastName"
+          label={strings.emergencyContact}
+          name="emergencyContact"
           inputType="text"
           onChange={this.handleChange}
-          value={lastName}
+          subtext={strings.emergencyContactSubtext}
+          value={emergencyContact}
           required
         />
         <LabeledInput
-          autoComplete="email"
-          label="Email"
-          name="email"
-          inputType="email"
+          label={strings.emergencyPhone}
+          name="emergencyPhone"
+          inputType="tel"
           onChange={this.handleChange}
-          value={email}
+          value={emergencyPhone}
           required
-        />
-        <LabeledCheckbox
-          label="I will be at least 18 years old as of <strong>June 14, 2018</strong>"
-          name="isOfAge"
-          onChange={this.handleChange}
-          checked={isOfAge}
         />
         <Button
           onClick={this.handleClick}
         >
-          I want to help!
+          {strings.contactDone}
         </Button>
       </div>
     );
@@ -113,13 +124,13 @@ class ContactInfo extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.user,
+    contact: state.contact,
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateUser: (userInfo) => { dispatch(updateUser(userInfo)); },
+    updateContact: (contactInfo) => { dispatch(updateContact(contactInfo)); },
   };
 };
 
