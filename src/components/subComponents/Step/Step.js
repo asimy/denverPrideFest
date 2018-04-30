@@ -9,22 +9,17 @@ import strings from '../../../constants/strings';
 // styles
 import classNames from './styles.scss';
 
-
 class Step extends React.Component {
   static propTypes = {
     className: PropTypes.string,
     steps: PropTypes.shape({
       current: PropTypes.number,
       max: PropTypes.number,
-    }),
+    }).isRequired,
   };
 
   static defaultProps = {
     className: '',
-    steps: {
-      current: 1,
-      max: 7,
-    },
   };
 
   render() {

@@ -11,6 +11,7 @@ import Button from '../../../subComponents/Button/index';
 
 // actions
 import updateUser from '../../../../actions/UserActions';
+import updateStep from '../../../../actions/StepActions';
 
 // strings
 import strings from '../../../../constants/strings';
@@ -30,6 +31,7 @@ class UserInfo extends React.Component {
     }).isRequired,
     // actions
     updateUser: PropTypes.func.isRequired,
+    updateStep: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -42,6 +44,10 @@ class UserInfo extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentWillMount() {
+    this.props.updateStep({ current: 1 });
+  }
+
   handleChange(e) {
     if (e.target.type === 'checkbox') {
       this.props.updateUser({ [e.target.name]: e.target.checked });
@@ -51,7 +57,6 @@ class UserInfo extends React.Component {
   }
 
   handleClick() {
-    console.log(this.props);
     /* eslint-disable-next-line react/prop-types */
     this.props.history.push('contactInfo');
   }
@@ -127,6 +132,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateUser: (userInfo) => { dispatch(updateUser(userInfo)); },
+    updateStep: (stepInfo) => { dispatch(updateStep(stepInfo)); },
   };
 };
 

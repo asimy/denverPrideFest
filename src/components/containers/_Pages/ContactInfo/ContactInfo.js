@@ -10,6 +10,7 @@ import Button from '../../../subComponents/Button/index';
 
 // actions
 import updateContact from '../../../../actions/ContactActions';
+import updateStep from '../../../../actions/StepActions';
 
 // strings
 import strings from '../../../../constants/strings';
@@ -30,6 +31,7 @@ class ContactInfo extends React.Component {
     }).isRequired,
     // actions
     updateContact: PropTypes.func.isRequired,
+    updateStep: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -40,6 +42,10 @@ class ContactInfo extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.updateStep({ current: 2 });
   }
 
   handleChange(e) {
@@ -131,6 +137,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateContact: (contactInfo) => { dispatch(updateContact(contactInfo)); },
+    updateStep: (stepInfo) => { dispatch(updateStep(stepInfo)); },
   };
 };
 

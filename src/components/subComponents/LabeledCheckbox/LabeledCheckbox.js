@@ -18,10 +18,6 @@ class LabeledCheckbox extends React.PureComponent {
     label: undefined,
     name: undefined,
   };
-  /* eslint-disable-next-line */
-  componentWillUpdate(next, prev) {
-    console.log(next, prev);
-  }
 
   render() {
     const {
