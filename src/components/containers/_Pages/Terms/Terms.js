@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import Step from '../../../subComponents/Step';
 import Button from '../../../subComponents/Button';
 import TermsWrapper from '../../../subComponents/TermsWrapper';
+import Sticky from '../../../subComponents/Sticky';
 
 // actions
 import updateUser from '../../../../actions/UserActions';
@@ -75,6 +76,7 @@ class Terms extends React.Component {
         <Step />
         {hasAcceptedTerms}
         <TermsWrapper />
+        <Sticky />
         <Button
           onClick={this.handleClick}
         >

@@ -1,5 +1,40 @@
 @import '../../../styles/main';
 
 .wrapper {
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  position: fixed;
+  width: 100vw;
+  display: grid;
+  grid-template-areas:
+    ". stky .";
+  grid-template-columns: 0 1fr 0;
 
+
+
+  @media only screen and (min-width: $small) {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  @media only screen and (min-width: $large) {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+}
+
+.message {
+  background-color: rgba(255, 255, 255, .85);
+  box-shadow: 0 -5px 10px $shadow;
+  color: red;
+  font-weight: 600;
+  grid-area: stky;
+  height: 100%;
+  line-height: 3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.hide {
+  display: none;
 }
