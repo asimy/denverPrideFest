@@ -9,6 +9,7 @@ export default {
       lastName: '',
       email: '',
       isOfAge: false,
+      hasAcceptedTerms: false,
     },
     contactInfo: {
       phone: '',

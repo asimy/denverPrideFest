@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // our components
-import Step from '../../../subComponents/Step/index';
-import LabeledInput from '../../../subComponents/LabeledInput/index';
-import Button from '../../../subComponents/Button/index';
+import Step from '../../../subComponents/Step';
+import LabeledInput from '../../../subComponents/LabeledInput';
+import Button from '../../../subComponents/Button';
 
 // actions
 import updateContact from '../../../../actions/ContactActions';
@@ -56,8 +56,9 @@ class ContactInfo extends React.Component {
     }
   }
 
-  handleClick(e) {
-    console.log(e, 'clicked', this);
+  handleClick() {
+    /* eslint-disable-next-line react/prop-types */
+    this.props.history.push('terms');
   }
 
 

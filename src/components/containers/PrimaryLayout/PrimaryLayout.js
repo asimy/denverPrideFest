@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from './styles.scss';
-import Header from '../../subComponents/Header/index';
-import PrideBar from '../../subComponents/PrideBar/index';
-import ContentWrapper from '../ContentWraper/index';
+import Header from '../../subComponents/Header';
+import PrideBar from '../../subComponents/PrideBar';
+import ContentWrapper from '../ContentWraper';
 
 class PrimaryLayout extends React.Component {
   render() {

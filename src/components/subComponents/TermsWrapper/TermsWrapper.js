@@ -1,24 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { Switch, Route } from 'react-router-dom';
 
 import classNames from './styles.scss';
 
-class Terms extends React.Component {
+class TermsWrapper extends React.Component {
   static propTypes = {
-    Terms: PropTypes.string,
+    terms: PropTypes.string,
   };
 
   static defaultProps = {
-    Terms: '',
+    terms: '',
   };
 
   render() {
     return (
       <div
         className={classNames.wrapper}
-        dangerouslySetInnerHTML={{ __html: this.props.Terms }} // eslint-disable-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: this.props.terms }} // eslint-disable-line react/no-danger
       />
     );
   }
@@ -30,4 +29,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Terms);
+export default connect(mapStateToProps)(TermsWrapper);

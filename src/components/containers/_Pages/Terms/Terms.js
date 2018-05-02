@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 
 // our components
 import Step from '../../../subComponents/Step';
-import LabeledInput from '../../../subComponents/LabeledInput';
-import LabeledCheckbox from '../../../subComponents/LabeledCheckbox';
 import Button from '../../../subComponents/Button';
+import TermsWrapper from '../../../subComponents/TermsWrapper';
 
 // actions
 import updateUser from '../../../../actions/UserActions';
@@ -19,15 +18,13 @@ import strings from '../../../../constants/strings';
 // styles
 import classNames from './styles.scss';
 
-class UserInfo extends React.Component {
+
+class Terms extends React.Component {
   static propTypes = {
     // props
     className: PropTypes.string,
     user: PropTypes.shape({
-      firstName: PropTypes.string,
-      lastName: PropTypes.string,
-      email: PropTypes.string,
-      isOfAge: PropTypes.bool,
+      hasAcceptedTerms: PropTypes.bool,
     }).isRequired,
     // actions
     updateUser: PropTypes.func.isRequired,
@@ -45,7 +42,7 @@ class UserInfo extends React.Component {
   }
 
   componentWillMount() {
-    this.props.updateStep({ current: 1 });
+    this.props.updateStep({ current: 3 });
   }
 
   handleChange(e) {
@@ -56,9 +53,8 @@ class UserInfo extends React.Component {
     }
   }
 
-  handleClick() {
-    /* eslint-disable-next-line react/prop-types */
-    this.props.history.push('contactInfo');
+  handleClick(e) {
+    console.log(e, 'clicked', this);
   }
 
 
@@ -66,10 +62,7 @@ class UserInfo extends React.Component {
     const {
       className,
       user: {
-        firstName,
-        lastName,
-        email,
-        isOfAge,
+        hasAcceptedTerms,
       },
     } = this.props;
 
@@ -80,43 +73,12 @@ class UserInfo extends React.Component {
         ].join(' ')}
       >
         <Step />
-        <LabeledInput
-          autoComplete="given-name"
-          label={strings.firstName}
-          name="firstName"
-          inputType="text"
-          onChange={this.handleChange}
-          value={firstName}
-          required
-        />
-        <LabeledInput
-          autoComplete="family-name"
-          label={strings.lastName}
-          name="lastName"
-          inputType="text"
-          onChange={this.handleChange}
-          value={lastName}
-          required
-        />
-        <LabeledInput
-          autoComplete="email"
-          label={strings.email}
-          name="email"
-          inputType="email"
-          onChange={this.handleChange}
-          value={email}
-          required
-        />
-        <LabeledCheckbox
-          label={`${strings.minAge} <strong>${strings.minAgeDate}</strong>`}
-          name="isOfAge"
-          onChange={this.handleChange}
-          checked={isOfAge}
-        />
+        {hasAcceptedTerms}
+        <TermsWrapper />
         <Button
           onClick={this.handleClick}
         >
-          {strings.userInfoDone}
+          {strings.contactDone}
         </Button>
       </div>
     );
@@ -136,4 +98,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(Terms);

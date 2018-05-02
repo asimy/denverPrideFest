@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import BasicInfo from '../_Pages/UserInfo';
 import ContactInfo from '../_Pages/ContactInfo';
+import Terms from '../_Pages/Terms';
 import classNames from './styles.scss';
 
 class ContentWrapper extends React.Component {
@@ -28,6 +29,7 @@ class ContentWrapper extends React.Component {
         <Switch>
           <Route path="/signup/userinfo" component={BasicInfo} />
           <Route path="/signup/contactinfo" component={ContactInfo} />
+          <Route path="/signup/terms" component={Terms} />
         </Switch>
       </main>
     );

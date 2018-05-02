@@ -1,9 +1,9 @@
 /* eslint-disable import/no-named-as-default */
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import PrimaryLayout from '../PrimaryLayout/index';
-import Terms from '../Terms/index';
-import NotFoundPage from '../_Pages/NotFoundPage/index';
+import PrimaryLayout from '../PrimaryLayout';
+
+import NotFoundPage from '../_Pages/NotFoundPage';
 import classNames from './styles.scss';
 
 class App extends React.Component {
@@ -14,7 +14,6 @@ class App extends React.Component {
           <Switch>
             <Redirect exact from="/" to="/signup/userinfo" />
             <Route path="/signup" component={PrimaryLayout} />
-            <Route path="/terms" component={Terms} />
             <Route component={NotFoundPage} />
           </Switch>
         </div>
